@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Mr.Sarat Utaireung</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+    <a href="#home" class="w3-bar-item w3-button"><b></b> Sarat Utaireung</a>
+    <!-- Float links to the right. Hide them on small screens -->
+    <div class="w3-right w3-hide-small">
+      <a href="index.html" class="w3-bar-item w3-button">index</a>
+      <a href="java.html" class="w3-bar-item w3-button">java</a>
+      <a href="api.html" class="w3-bar-item w3-button">api</a>
+      
+    </div>
+  </div>
+</div>
+<!-- Page content -->
+<div class="w3-content w3-padding-64 w3-margin-top" style="max-width:1564px">
+
+<h1>The Document Object</h1>
+
+<hr>
+<h2>Just change A - Z</h2>
+<p id="demo">Hi</p>
+
+<hr>
+<h2>Click to change</h2>
+<p id="demo2">Hi</p>
+<button onclick="myFunction()">Click me</button>
+
+<hr>
+<h2>Calculate number</h2>
+<input id="numb">
+<button type="button" onclick="myFunction2()">Submit</button>
+<p id="demo3"></p>
+
+<hr>
+<h2>(9)(2)(8) ?</h2>  
+<button onclick="myFunction5()">Summit</button>
+<p id="demo5"></p>
+<hr>
+
+<hr>
+<h2>Even numbers</h2>
+<h3>5, 7, 31, 12, 20, 100, 99, 1, 3, 10</h3>
+<button onclick="myFunction4()">Summit</button>
+<p id="demo4"></p>
+
+<!-- End page content -->
+</div>
+
+<div>
+  <canvas id="myChart2" ></canvas>
+</div>
+
+
+
+<!-- https://www.w3schools.com/js/js_graphics_chartjs.asp -->
+<hr>
+<canvas id="myChart" style="width:100%;max-width:1000px"></canvas>
+
+<!-- End page content -->
+</div>
+<!-- Footer -->
+<!-- <footer class="w3-center w3-black w3-padding-16">
+  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+</footer> -->
+
+
+<script>
+  //document.getElementById("demo").innerHTML = "Hello World";
+
+  function printAlphabets() {
+  // สร้างตัวแปรเพื่อเก็บตัวอักษร A-Z
+  const alphabets = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
+  // ใช้ forEach เพื่อวนลูปผ่านทุกตัวอักษร
+  alphabets.split('').forEach((alphabet, index) => {
+    // ใช้ setTimeout เพื่อกำหนดระยะเวลาการแสดงผล
+    setTimeout(() => {
+      document.getElementById("demo").innerHTML = alphabet;
+      console.log(alphabet);
+    }, index * 1000); // 1000 milliseconds = 1 วินาที
+  });
+}
+printAlphabets();
+
+  function myFunction() {
+    document.getElementById("demo2").innerHTML = "Hello World";
+}
+
+  function myFunction2() {
+  // Get the value of the input field with id="numb"
+  let x = document.getElementById("numb").value;
+  // If x is Not a Number or less than one or greater than 10
+  let text;
+  if (isNaN(x) || x < 1 || x > 10) {
+    text = "Input not valid";
+  } else {
+    text = "Input OK";
+  }
+  document.getElementById("demo3").innerHTML = text;
+}
+function myFunction5(){
+    function calculateProduct(...numbers) {
+  if (numbers.length === 0) {
+    console.error("Please provide at least one number.");
+    return undefined;
+  }
+  return numbers.reduce((product, number) => product * number, 1);
+}
+const result = calculateProduct(9, 2, 8);
+console.log(result); 
+document.getElementById("demo5").innerHTML = result;
+  }
+  function myFunction4(){
+function filterOutOdds(...numbers) {
+    return numbers.filter(number => number % 2 === 0);
+  }
+  const result = filterOutOdds (5, 7, 31, 12, 20, 100, 99, 1, 3, 10);
+  console.log(result); 
+  document.getElementById("demo4").innerHTML = result;
+}
+
+</script>
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>
+  <canvas id="myChart"></canvas>
+</div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  const ctx = document.getElementById('myChart2');
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+      datasets: [{
+        label: '# of Votes',
+        data: [12, 19, 3, 5, 2, 3],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+</script>
+
+<script>
+  const xyValues = [
+    {x:50, y:7},
+    {x:60, y:8},
+    {x:70, y:8},
+    {x:80, y:9},
+    {x:90, y:9},
+    {x:100, y:9},
+    {x:110, y:10},
+    {x:120, y:11},
+    {x:130, y:14},
+    {x:140, y:14},
+    {x:150, y:15}
+  ];
+  
+  new Chart("myChart", {
+    type: "scatter",
+    data: {
+      datasets: [{
+        pointRadius: 4,
+        pointBackgroundColor: "rgb(0,0,255)",
+        data: xyValues
+      }]
+    },
+    options: {
+      legend: {display: false},
+      scales: {
+        xAxes: [{ticks: {min: 40, max:160}}],
+        yAxes: [{ticks: {min: 6, max:16}}],
+      }
+    }
+  });
+</script>
+
+
+</body>
+</html>

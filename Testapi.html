@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Portfolio NarongritRuangdongyang</title>
+       
+    </head>
+    <style>      
+       html{
+     display: grid;
+     grid-template-rows: auto 1fr auto;
+ }
+ *{ 
+     padding:0;
+     box-sizing: border-box;
+     margin: 0;
+     font-family: 'Oxygen', sans-serif;
+     }
+  nav{
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+      height: auto;
+      position:fixed;
+      background-color:#FDEDD0;
+      padding: 5px;
+  }
+ .nav-link{
+     text-decoration: none;
+     color: black;
+    }
+ .welcome-section{
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     width: 100%;
+     height: 100vh;
+     overflow: auto;
+     background-image: linear-gradient(to bottom right,#7F7FD5,#86A8E7, #91EAE4);
+     padding: 25px;
+ }
+ .welcome-text{
+     text-align: center;
+     color: #FDEDD0;
+     max-width: 70%;
+     word-wrap: break-word;
+      }
+ .welcome-section > header{
+     font-size: 3.2rem;
+     color: #FDEDD0;
+              }
+ 
+ .welcome-text > p{
+     font-size: 1.3rem;
+     }
+ 
+ .welcome-img{
+     align-items: flex-end;
+     justify-content: flex-end;       
+ }
+ .welcome-img>img{
+     border-radius: 50%;
+     width: 175px;
+ }
+ .projects-section{
+     padding-top: 20px;
+     background-color: #FF634D;
+     text-align: center;
+ }
+ .projects-section>h2{
+     color: #FDEDD0;
+     font-size: 2rem;
+ }
+ .projects-grid{
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: center;
+     margin: 5px;
+     margin-bottom: 0;      
+ }
+ .project{
+     margin: 5px;
+     background:  #FDEDD0;   
+     text-decoration: none;
+     color: black;    
+     border: 2px solid   black;      
+ }
+ .project-title>span{
+     text-decoration: none;
+     font-weight: bold;
+ .project-title{
+         font-size: 1.3rem;
+ }
+ .code {
+     color:#FDEDD0;
+     transition: color 0.3s ease-out;
+   }
+   .project:hover .code {
+     color: #FF634D
+   }
+ .contact-section{
+     background-color: #FD795B;
+     height: 125px;
+     display: flex;
+     flex-direction: column;
+     justify-content: space-around;
+     text-align: center;
+     padding:0px;  
+ }
+ .contact-section-header{
+     font-size: 1.5rem;
+     color: #FDEDD0;
+ }
+ .contact-links{
+     display: flex;
+     justify-content: space-around;
+     font-size: 40px;
+ }
+ .fa {
+     text-decoration: none;
+     color:  #FDEDD0;
+   }
+   .fa:hover{
+       color:  #7F7FD5;
+   }
+   img {
+     width: 100%;
+   }
+   @media (max-width:660px) {
+         .welcome-text{
+         float: left;
+     }    
+     .welcome-text > p{
+         font-size: 1rem;
+         max-width:100%;
+     }
+     .welcome-section{
+         padding-bottom: 5px;
+     }
+     .welcome-section > header{
+         font-size: 2.5rem;
+   }
+   .welcome-img{
+       height:auto;
+       max-width:100%;
+   }
+ }  
+     </style>
+<body>
+    <nav id="navbar">
+
+    <a href="/index.html" class="nav-link"><h1>index</h1></a>
+    <a href="/java.html" class="nav-link"><h1>java</h1></a>
+    <a href="/api.html" class="nav-link"><h1>api</h1></a>
+    </nav>
+<section id="contact" class="contact-section">
+    <div class="contact-section-header">
+        <br>
+        <br>
+        <h1>API</h1>
+<hr>
+<br>
+<h2>Click to change</h2>
+<p id="demo2">Hi</p>
+<button onclick="myFunction()">Click me</button>
+    </div>
+    
+    <hr>
+<h1>Random Dog Image</h1>
+<button onclick="fetchRandomDog()">Get Random Dog</button>
+<img id="dogImage" width="400" height="300" src="" alt="Random Dog" style="display:none;">
+
+<hr>
+<form 
+      method="POST" 
+      action="https://script.google.com/macros/s/AKfycbx_Tnn0AZMd2_1jaJJLZMNt82j3D_qY76W1u4Th4EgGIlkEDYiSXmPhdflWjiubgtTP/exec"
+    >
+      <input name="Email" type="email" placeholder="Email" required>
+      <input name="Name" type="text" placeholder="Name" required>
+      <button type="submit">Send</button>
+    </form>
+    <hr>
+
+    <h2>Nationalize API Demo</h2>
+<form id="nameForm">
+    <label for="name">Enter your name:</label>
+    <input type="text" id="name" name="name" required>
+    <button type="button" onclick="fetchNationality()">Submit</button>
+</form>
+<div id="result"></div>
+<hr>
+
+<h2>Coinbase API Demo</h2>
+<div id="lastUpdateTime"></div>
+<div id="prices"></div>
+<hr>
+
+<iframe width="100%" height="400" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQyzV5RSljnf-FxKuzDSGhdNRJPtTajDRhReMbEEbPHEHedC70hKozosFXTVjKj3slZEbLmCLSqfPb8/pubchart?oid=1677119726&format=interactive"></iframe>
+
+<hr>
+<iframe width="100%" height="800" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQyzV5RSljnf-FxKuzDSGhdNRJPtTajDRhReMbEEbPHEHedC70hKozosFXTVjKj3slZEbLmCLSqfPb8/pubhtml"></iframe>
+<hr>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3321.586607588623!2d100.4515444248748!3d13.795331184150342!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29a101f6b6f53%3A0xc48f571867a042de!2sThe%20Blessed%20Sacrament%20Church%2C%20Taling%20Chan!5e0!3m2!1sen!2sth!4v1701823694755!5m2!1sen!2sth" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+<!-- End page content -->
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    <script>
+        //document.getElementById("demo").innerHTML = "Hello World";
+      
+      
+        function myFunction() {
+          fetch("https://catfact.ninja/fact")
+            .then(function(response){
+              return response.json()
+            })
+            .then(function(data){
+              let txt = "";
+                for (let x in data) {
+                  txt += data[x] + " ";
+                document.getElementById("demo2").innerHTML = txt;
+                };
+            
+              return data;
+            })  
+            
+       
+      }
+      
+      
+      </script>
+      <script>
+        function fetchRandomDog() {
+            // Fetch data from the API
+            fetch('https://random.dog/woof.json')
+                .then(response => response.json())
+                .then(data => {
+                    const url = data.url;
+
+                    // Update the image source with the fetched URL
+                    document.getElementById('dogImage').src = url;
+
+                    // Display the image
+                    document.getElementById('dogImage').style.display = 'block';
+                })
+                .catch(error => {
+                    console.error('Error fetching random dog:', error);
+                });
+        }
+</script>
+
+<script>
+  function fetchNationality() {
+      var name = document.getElementById('name').value;
+      if (name.trim() === "") {
+          alert("Please enter a name");
+          return;
+      }
+
+      fetch(`https://api.nationalize.io?name=${name}`)
+          .then(response => response.json())
+          .then(data => {
+              displayResult(data);
+          })
+          .catch(error => {
+              console.error('Error fetching data:', error);
+              alert('Error fetching data. Please try again.');
+          });
+  }
+
+  function displayResult(data) {
+      var resultDiv = document.getElementById('result');
+      var countryData = data.country[0];
+
+      if (countryData) {
+          var countryId = countryData.country_id;
+          var probability = (countryData.probability * 100).toFixed(2);
+          resultDiv.innerHTML = `<p>Your most likely country is ${countryId} with a probability of ${probability}%.</p>`;
+      } else {
+          resultDiv.innerHTML = "<p>No data available for the provided name.</p>";
+      }
+  }
+</script>
+
+<script>
+  function fetchPrices() {
+      var now = new Date();
+      var currentTime = now.toLocaleTimeString();
+
+      fetch('https://api.coinbase.com/v2/exchange-rates?currency=USDT')
+          .then(response => response.json())
+          .then(data => {
+              displayPrices(data);
+              displayLastUpdateTime(currentTime);
+          })
+          .catch(error => {
+              console.error('Error fetching data:', error);
+              alert('Error fetching data. Please try again.');
+          });
+  }
+  function displayPrices(data) {
+      var pricesDiv = document.getElementById('prices');
+      var rates = data.data.rates;
+
+      var currencies = ['1INCH', 'AAVE', 'ABT', 'ACH', 'ACS', 'ADA', 'AED', 'BTC', 'ETH'];
+      var pricesHtml = '<p>1 USDT can buy:</p><ul>';
+
+      currencies.forEach(currency => {
+          if (rates[currency]) {
+              pricesHtml += `<li>${currency}: ${rates[currency]}</li>`;
+          } else {
+              pricesHtml += `<li>${currency}: N/A</li>`;
+          }
+      });
+
+      pricesHtml += '</ul>';
+      pricesDiv.innerHTML = pricesHtml;
+  }
+
+  function displayLastUpdateTime(currentTime) {
+      var updateTimeDiv = document.getElementById('lastUpdateTime');
+      updateTimeDiv.innerHTML = `<p>Last Update Time: ${currentTime}</p>`;
+  }
+
+  fetchPrices();
+
+  setInterval(fetchPrices, 3000);
+</script>
+
+</section>
+</body>
+</html>
